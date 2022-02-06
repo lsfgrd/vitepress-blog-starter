@@ -1,10 +1,10 @@
 <script setup>
-import Date from './Date.vue'
-import { data as posts } from '../posts.data'
+import Date from './Date.vue';
+import { data as posts } from '../posts.data';
 </script>
 
 <template>
-  <div class="divide-y divide-gray-200">
+  <div class="divide-y divide-gray-200 dark:divide-slate-200/5">
     <div class="pt-6 pb-8 space-y-2 md:space-y-5">
       <h1
         class="
@@ -12,6 +12,7 @@ import { data as posts } from '../posts.data'
           leading-9
           font-extrabold
           text-gray-900
+          dark:text-white
           tracking-tight
           sm:text-4xl sm:leading-10
           md:text-6xl md:leading-14
@@ -19,10 +20,14 @@ import { data as posts } from '../posts.data'
       >
         {{ $frontmatter.title }}
       </h1>
-      <p class="text-lg leading-7 text-gray-500">{{ $frontmatter.subtext }}</p>
+      <p class="text-lg leading-7 text-gray-500 dark:text-white">{{ $frontmatter.subtext }}</p>
     </div>
-    <ul class="divide-y divide-gray-200">
-      <li class="py-12" v-for="{ title, href, date, excerpt } of posts">
+    <ul class="divide-y divide-gray-200 dark:divide-slate-200/5">
+      <li
+        class="py-12"
+        v-for="{ title, href, date, excerpt } of posts"
+        v-bind:key="href"
+      >
         <article
           class="
             space-y-2
@@ -33,11 +38,11 @@ import { data as posts } from '../posts.data'
           <div class="space-y-5 xl:col-span-3">
             <div class="space-y-6">
               <h2 class="text-2xl leading-8 font-bold tracking-tight">
-                <a class="text-gray-900" :href="href">{{ title }}</a>
+                <a class="text-gray-900 dark:text-white" :href="href">{{ title }}</a>
               </h2>
               <div
                 v-if="excerpt"
-                class="prose max-w-none text-gray-500"
+                class="prose dark:prose-invert max-w-none text-gray-500 dark:text-white"
                 v-html="excerpt"
               ></div>
             </div>

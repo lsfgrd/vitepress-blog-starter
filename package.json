@@ -8,7 +8,7 @@
     "serve": "vitepress serve"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.0",
+    "@tailwindcss/typography": "^0.5.1",
     "feed": "^4.2.1",
     "gray-matter": "^4.0.2",
     "vitepress": "^0.21.6"

@@ -3,11 +3,11 @@ const props = defineProps({
   /**
    * { time, string }
    */
-  date: Object
-})
+  date: Object,
+});
 
 function getDateTime() {
-  return new Date(props.date.time).toISOString()
+  return new Date(props.date.time).toISOString();
 }
 </script>
 
